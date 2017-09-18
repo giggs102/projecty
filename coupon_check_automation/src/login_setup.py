@@ -12,6 +12,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import os
+import time
 
 def initialize():
     config_parser = read_cfg_file()
@@ -22,15 +23,26 @@ def initialize():
     if browser == 'chrome' :
         chromeOptions = Options()
         chromeOptions.add_argument("--start-maximized")
-        chromedriver = 'C:\\Python27\\Scripts\\chromedriver.exe'
+        chromedriver = '/Users/dilpreetsingh/Documents/webdriver/chromedriver'
         os.environ["webdriver.chrome.driver"] = chromedriver
         driver = webdriver.Chrome(chromedriver,chrome_options=chromeOptions)
     
     url = config_parser.get('connection', 'website_url')
     driver.get(url)
     wait = WebDriverWait(driver, timeout_interval)
-    elem = wait.until(EC.presence_of_element_located((By.ID,"sizes618069")))
+    elem = wait.until(EC.presence_of_element_located((By.ID,"login-form")))
     print "we are here .."
+    elem = driver.find_element(By.NAME,'Email')
+    elem.send_keys('sidh140713@gmail.com')
+    elem = driver.find_element(By.NAME,'Password')
+    elem.send_keys('wayne123')
+    elem.send_keys(Keys.RETURN)
+    time.sleep(10)
+    driver.close()
+    exit(0)
+    
+    
+    
     #elem = wait.until(EC.presence_of_element_located((By.XPATH,"/html/body/div[12]/div[2]/div[3]/div/div[2]/div[3]/div[6]/div[1]/div/div[1]/div[1]/div[3]/div[1]/div[2]/div[3]/div/div[2]/ul/li[3]/span")))
     elem = driver.find_element_by_xpath("/html/body/div[12]/div[2]/div[3]/div/div[2]/div[3]/div[6]/div[1]/div/div[1]/div[1]/div[3]/div[1]/div[2]/div[3]/div/div[2]/ul/li[3]/span")
     #elem = driver.find_element_by_name('j_username')

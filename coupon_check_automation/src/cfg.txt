@@ -1,6 +1,9 @@
 [connection]
-website_url = http://www1.macys.com/shop/product/calvin-klein-black-solid-slim-fit-suit-separates?ID=618068&CategoryID=17788#fn=sp%3D1%26spc%3D890%26slotId%3D1%26kws%3Dsuits
-checkout_url = http://www1.macys.com/bag/index.ognc?cm_sp=navigation-_-top_nav-_-bag
+#website_url = http://www1.macys.com/shop/product/calvin-klein-black-solid-slim-fit-suit-separates?ID=618068&CategoryID=17788#fn=sp%3D1%26spc%3D890%26slotId%3D1%26kws%3Dsuits
+#checkout_url = http://www1.macys.com/bag/index.ognc?cm_sp=navigation-_-top_nav-_-bag
+
+website_url = https://www.doordash.com/consumer/login/
+checkout_url = 
 username = NBIAdministrator
 password = Simple.0
 
