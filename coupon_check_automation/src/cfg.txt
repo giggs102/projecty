@@ -1,0 +1,16 @@
+[connection]
+website_url = http://www1.macys.com/shop/product/calvin-klein-black-solid-slim-fit-suit-separates?ID=618068&CategoryID=17788#fn=sp%3D1%26spc%3D890%26slotId%3D1%26kws%3Dsuits
+checkout_url = http://www1.macys.com/bag/index.ognc?cm_sp=navigation-_-top_nav-_-bag
+username = NBIAdministrator
+password = Simple.0
+
+
+[files]
+custom_output_file_names = False
+output_summary_file_name = default_rep_performance_test.log
+
+[test_parameters]
+timeout_interval_in_seconds = 360
+# Use either chrome or firefox (currently only firefox works)
+#browser = firefox
+browser = chrome
